@@ -1,0 +1,2 @@
+# hello-phi-3-vision
+Proof of concept to use [**https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu**](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu) model in .NET ecosystem with ONNX runtime running in CPU.
