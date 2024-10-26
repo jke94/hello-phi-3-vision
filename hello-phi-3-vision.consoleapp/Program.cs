@@ -1,10 +1,32 @@
 ﻿namespace hello_phi_3_vision.consoleapp
 {
-    internal class Program
+    #region using
+    
+    using Microsoft.Extensions.Hosting;
+    using hello_phi_3_vision;
+    using Microsoft.Extensions.DependencyInjection;
+
+    #endregion
+
+    public class Program
     {
-        static void Main(string[] args)
+        #region Public methods
+
+        public static async Task<int> Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var host = Host.CreateDefaultBuilder(args)
+            .ConfigureServices(services =>
+            {
+                services.AddTransient<IMainService, MainService>();
+                services.AddTransient<IHelloPhi3VisionService, HelloPhi3VisionService>();
+            }
+            ).Build();
+
+            var myService = host.Services.GetRequiredService<IMainService>();
+            
+            return await myService.RunAsync(args);
         }
+
+        #endregion
     }
 }
