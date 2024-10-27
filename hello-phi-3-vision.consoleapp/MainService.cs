@@ -61,14 +61,23 @@
         {
             if (string.IsNullOrEmpty(options.ModelPath))
             {
-                throw new Exception("Model path must be specified.");
+                Console.WriteLine("Model path must be specified.");
+                return -1;
+            }
+
+            string modelPath = Path.GetFullPath(options.ModelPath) ?? string.Empty;
+
+            if (!Path.Exists(modelPath))
+            {
+                Console.WriteLine($"The model path '{modelPath}' does not exist.");
+                return -1;
             }
 
             Console.WriteLine("-------------");
             Console.WriteLine("Hello, Phi-3-Vision! To finalize program please enter '[EXIT]' string.");
             Console.WriteLine("-------------");
 
-            Console.WriteLine("Model path: " + options.ModelPath);
+            Console.WriteLine("Model path: " + modelPath);
 
             string? imagePath;
             string? prompt;
