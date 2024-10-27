@@ -1,5 +1,5 @@
 # hello-phi-3-vision
-Proof of concept to use [**https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu**](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu) model in .NET ecosystem with ONNX runtime running in CPU.
+Proof of concept to use [**microsoft/Phi-3-vision-128k-instruct-onnx-cpu**](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu) model in .NET ecosystem with ONNX runtime running on the CPU.
 
 ## A. Initializing setup to run the proof of concept.
 
@@ -48,6 +48,11 @@ dotnet run --project .\hello-phi-3-vision.consoleapp\hello-phi-3-vision.consolea
 ### 2. Example output!
 
 #### A. Example.
+
+![Image input](https://github.com/jke94/hello-phi-3-vision/blob/master/images/image_1_motogp_poster.jpg)
+
+- Output:
+
 ```
 PS J:\Repositories\hello-phi-3-vision> dotnet run --project .\hello-phi-3-vision.consoleapp\hello-phi-3-vision.consoleapp.csproj -c Release --model .\models\microsoft\Phi-3-vision-128k-instruct-onnx-cpu\cpu-int4-rtn-block-32-acc-level-4
 -------------
@@ -72,6 +77,10 @@ PS J:\Repositories\hello-phi-3-vision>
 
 #### B. Example.
 
+![Image input](https://github.com/jke94/hello-phi-3-vision/blob/master/images/image_2_plano_autocad.jpg)
+
+- Output:
+- 
 ```
 PS J:\Repositories\hello-phi-3-vision> dotnet run --project .\hello-phi-3-vision.consoleapp\hello-phi-3-vision.consoleapp.csproj -c Release --model J:\Repositories\hello-phi-3-vision\models\microsoft\Phi-3-vision-128k-instruct-onnx-cpu\cpu-int4-rtn-block-32-acc-level-4
 -------------
