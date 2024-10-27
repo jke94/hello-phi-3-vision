@@ -58,7 +58,7 @@ Use case 0:
 Please, enter a prompt:
 Could you describe the image?
 Please, enter the image path:
-J:\Repositories\hello-phi-3-vision\image_1.jpg
+J:\Repositories\hello-phi-3-vision\image_1_motogp_poster.jpg
 Processing...
 Generating response...
 ================  Output  ================
@@ -82,7 +82,7 @@ Use case 0:
 Please, enter a prompt:
 About the following image give me a detailled description about the content of the image.
 Please, enter the image path:
-J:\Repositories\hello-phi-3-vision\image_2_plano_autocad.jpg
+J:\Repositories\hello-phi-3-vision\images\image_2_plano_autocad.jpg
 Processing...
 Generating response...
 ================  Output  ================
