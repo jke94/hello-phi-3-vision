@@ -38,12 +38,15 @@
             using var inputs = processor.ProcessImages(prompt, images);
 
             Console.WriteLine($"Generating response...");
+
             using var generatorParams = new GeneratorParams(model);
             generatorParams.SetInputs(inputs);
             generatorParams.SetSearchOption("max_length", 3072);
+            
             using var generator = new Generator(model, generatorParams);
 
             Console.WriteLine("================  Output  ================");
+
             while (!generator.IsDone())
             {
                 generator.ComputeLogits();
@@ -52,6 +55,7 @@
                 var output = tokenizerStream.Decode(newTokens[^1]);
                 Console.Write(output);
             }
+
             Console.WriteLine();
             Console.WriteLine("==========================================");
 
